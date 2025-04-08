@@ -1,0 +1,4 @@
+cords
+__pycache__
+poetry.lock
+src/agro_reich/samples/tmp

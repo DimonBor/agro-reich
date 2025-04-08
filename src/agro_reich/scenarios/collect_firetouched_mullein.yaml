@@ -1,0 +1,181 @@
+name: "Collect Firetouched Mullein"
+tasks:
+  - task: drive
+    from: travel
+    to: bed_1
+
+  - task: park
+  
+  - task: collect
+    culture: firetouched_mullein
+
+  - task: mount
+  # ---
+  - task: drive
+    from: bed_1
+    to: bed_2
+  
+  - task: park
+  
+  - task: collect
+    culture: firetouched_mullein
+
+  - task: mount
+  # ---
+  - task: drive
+    from: bed_2
+    to: bed_3
+  
+  - task: park
+  
+  - task: collect
+    culture: firetouched_mullein
+
+  - task: mount
+  # ---
+  - task: drive
+    from: bed_3
+    to: bed_4
+  
+  - task: park
+  
+  - task: collect
+    culture: firetouched_mullein
+
+  - task: mount
+  # ---
+  - task: drive
+    from: bed_4
+    to: bed_5
+
+  - task: park
+  
+  - task: collect
+    culture: firetouched_mullein
+
+  - task: mount
+  # ---
+  - task: drive
+    from: bed_5
+    to: bed_6
+
+  - task: park
+  
+  - task: collect
+    culture: firetouched_mullein
+
+  - task: mount
+  # ---
+  - task: drive
+    from: bed_6
+    to: bed_16
+
+  - task: park
+  
+  - task: collect
+    culture: firetouched_mullein
+
+  - task: mount
+  # ---
+  - task: drive
+    from: bed_16
+    to: bed_7
+
+  - task: park
+  
+  - task: collect
+    culture: firetouched_mullein
+
+  - task: mount
+  # ---
+  - task: drive
+    from: bed_7
+    to: bed_8
+
+  - task: park
+  
+  - task: collect
+    culture: firetouched_mullein
+
+  - task: mount
+  # ---
+  - task: drive
+    from: bed_8
+    to: bed_9
+
+  - task: park
+  
+  - task: collect
+    culture: firetouched_mullein
+
+  - task: mount
+  # ---
+  - task: drive
+    from: bed_9
+    to: bed_10
+
+  - task: park
+  
+  - task: collect
+    culture: firetouched_mullein
+
+  - task: mount
+  # ---
+  - task: drive
+    from: bed_10
+    to: bed_13
+
+  - task: park
+  
+  - task: collect
+    culture: firetouched_mullein
+
+  - task: mount
+  # ---
+  - task: drive
+    from: bed_13
+    to: bed_14
+
+  - task: park
+  
+  - task: collect
+    culture: firetouched_mullein
+
+  - task: mount
+  # ---
+  - task: drive
+    from: bed_14
+    to: bed_15
+
+  - task: park
+  
+  - task: collect
+    culture: firetouched_mullein
+
+  - task: mount
+  # ---
+  - task: drive
+    from: bed_15
+    to: bed_11
+
+  - task: park
+  
+  - task: collect
+    culture: firetouched_mullein
+
+  - task: mount
+  # ---
+  - task: drive
+    from: bed_11
+    to: bed_12
+
+  - task: park
+  
+  - task: collect
+    culture: firetouched_mullein
+
+  - task: mount
+  # ---
+  - task: drive
+    from: bed_12
+    to: travel

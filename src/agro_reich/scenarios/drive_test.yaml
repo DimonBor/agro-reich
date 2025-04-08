@@ -1,0 +1,7 @@
+name: "Drive Test"
+tasks:
+  - task: drive
+    from: bed_3
+    to: bed_3
+
+  - task: park
