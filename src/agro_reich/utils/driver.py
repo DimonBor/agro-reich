@@ -2,8 +2,8 @@ import time
 import keyboard
 import threading
 import pyautogui
-from utils.logger import get_logger
-from utils.cords import read_cords
+from agro_reich.utils.logger import get_logger
+from agro_reich.utils.cords import read_cords
 
 
 def drive(to_drive):
@@ -82,3 +82,7 @@ def park():
     dismount()
     start_cords[0] -= 12
     drive_path([start_cords])
+
+
+def travel(island):
+    pass

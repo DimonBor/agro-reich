@@ -1,14 +1,12 @@
 import sys
+import time
 import threading
-from utils.cords import update_cords
-from utils.cultures import locate_culture
-from utils.scenarios import Scenario
-from utils.logger import get_logger
+from agro_reich.utils.cords import update_cords
+from agro_reich.utils.scenarios import Scenario
+from agro_reich.utils.logger import get_logger
+from agro_reich.utils.baron import get_job, hand_in_job, config
 
 cmd = sys.argv
-
-locate_culture("firetouched_mullein")
-
 
 if __name__ == "__main__":
     logger = get_logger(threading.current_thread().name)
@@ -16,18 +14,22 @@ if __name__ == "__main__":
     cords_updater = threading.Thread(name="CordsUpdater", target=update_cords)
     cords_updater.start()
 
-    #test_sceanrio = Scenario("collect_single_test")
-    #test_sceanrio = Scenario("drive_test")
-    test_sceanrio = Scenario("collect_firetouched_mullein")
-    
-    test_results = test_sceanrio.run()
+    while True:
+        job = get_job()
 
-    logger.info(f"TScenario stats: {test_results}")
+        if not job or not config:
+            time.sleep(300)
 
-    '''
-    driver = threading.Thread(
-        name="Driver",
-        target=drive_path,
-        args=(find_path('bed_2', 'bed_3'),))
-    driver.start()
-'''
+        match job['job_type']:
+            case 1:  # seeding
+                main_scenario = Scenario("seed_firetouched_mullein")
+            case 2:  # harvesting
+                main_scenario = Scenario("collect_firetouched_mullein")
+
+        main_scenario.tasks.insert(0, {
+            "travel": {"to": job['island']}
+            })
+
+        result = main_scenario.run()
+
+        hand_in_job(job['job_id'], stats=result)

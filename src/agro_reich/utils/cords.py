@@ -1,13 +1,17 @@
 import struct
 import threading
 import subprocess
-from utils.logger import get_logger
+from agro_reich.utils.logger import get_logger
 
 
 def update_cords():
     logger = get_logger(threading.current_thread().name)
 
-    cmd = "tshark -i enp4s0 -l -T fields -e udp.payload port 5056 and udp and ip[2:2] == 109".split()
+    cmd = (
+        "tshark -i enp4s0 -l -T fields -e udp.payload port 5056 and"
+        "udp and ip[2:2] == 109").split()
+
+    logger.info(f"Starting cord_updater with cmd: {cmd}")
 
     while True:
         x_old = 0

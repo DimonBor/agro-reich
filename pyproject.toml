@@ -17,6 +17,7 @@ dependencies = [
     "xlib (>=0.21,<0.22)",
     "mss (>=10.0.0,<11.0.0)",
     "pyyaml (>=6.0.2,<7.0.0)",
+    "requests (>=2.32.3,<3.0.0)",
 ]
 
 [tool.poetry]

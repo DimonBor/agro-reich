@@ -1,9 +1,9 @@
 import yaml
 import threading
-from utils.logger import get_logger
-from utils.driver import drive_path, mount, dismount, park
-from utils.path import find_path
-from utils.cultures import collect_culture
+from agro_reich.utils.logger import get_logger
+from agro_reich.utils.driver import drive_path, mount, dismount, park, travel
+from agro_reich.utils.path import find_path
+from agro_reich.utils.cultures import collect_culture
 
 
 class Scenario:
@@ -25,6 +25,9 @@ class Scenario:
 
         for task in self.tasks:
             match task["task"]:
+                case "travel":
+                    logger.info(f"Traveling to {task['to']}")
+                    travel(task['to'])
                 case "drive":
                     logger.info(f"Driving from {task['from']} to {task['to']}")
                     drive_path(find_path(task["from"], task["to"]))

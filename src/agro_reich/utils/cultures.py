@@ -4,9 +4,9 @@ import mss
 import time
 import pyautogui
 import threading
-from utils.logger import get_logger
-from utils.driver import drive_path
-from utils.cords import read_cords
+from agro_reich.utils.logger import get_logger
+from agro_reich.utils.driver import drive_path
+from agro_reich.utils.cords import read_cords
 
 
 def get_screen():
